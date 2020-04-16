@@ -65,8 +65,12 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: add ssr plus
-      run: git clone https://github.com/fw876/helloworld package/openwrt-packages/helloworld
-
+      run: |
+        cd package
+        mkdir openwrt-packages
+        cd openwrt-packages
+        git clone https://github.com/fw876/helloworld package/openwrt-packages/helloworld
+           
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |

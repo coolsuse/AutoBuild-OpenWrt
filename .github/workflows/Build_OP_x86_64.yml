@@ -66,6 +66,7 @@ jobs:
 
     - name: add ssr plus
       run: |
+        cd lede
         cd package
         mkdir openwrt-packages
         cd openwrt-packages

@@ -60,7 +60,7 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsuse/lede
+        REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
@@ -72,6 +72,7 @@ jobs:
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
+        sed -i 's/\#src-git helloworld/\src-git helloworld/g' ./feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a

@@ -60,14 +60,14 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: https://github.com/coolsuse/lede
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
 
-    - name: Add HelloWorld
-      working-directory: ./openwrt/package
-      run: git clone https://github.com/fw876/helloworld
+   #  - name: Add HelloWorld
+   #    working-directory: ./openwrt/package
+   #    run: git clone https://github.com/fw876/helloworld
 
     - name: Update & Install feeds
       working-directory: ./openwrt
